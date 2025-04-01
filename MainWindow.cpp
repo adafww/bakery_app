@@ -35,15 +35,24 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     
     setWindowTitle("Учёт работы хлебозавода");
     setStyleSheet(
-        "QMainWindow { background-color: #2B2B2B; }"   // Темно-серый фон окна
-        "QTabWidget::pane { background-color: #2B2B2B; }" // Темно-серый фон вкладок
+        "QMainWindow { background-color: #2B2B2B; }"  // Тёмно-серый фон главного окна
+        "QTabWidget::pane { background-color: #2B2B2B; }" // Фон области вкладок
         "QTabBar::tab { background: #3B3B3B; color: white; padding: 5px; }"
         "QTabBar::tab:selected { background: #4B4B4B; }"
-        "QTableView { background-color: white; color: black; gridline-color: gray; }"
-        "QHeaderView::section { background-color: #4B4B4B; color: white; padding: 5px; }"
+
+        // Стили для таблиц
+        "QTableView { background-color: #3B3B3B; color: white; gridline-color: gray; }" // Фон таблицы
+        "QTableView QHeaderView::section { background-color: #4B4B4B; color: white; padding: 5px; }" // Заголовки таблицы
+        "QTableView::item { background-color: #3B3B3B; color: white; }" // Ячейки
+        "QTableView::item:selected { background-color: #555555; color: white; }" // Выделенные строки
+        "QTableView QScrollBar:vertical { background: #2B2B2B; width: 10px; }" // Вертикальная полоса прокрутки
+        "QTableView QScrollBar:horizontal { background: #2B2B2B; height: 10px; }" // Горизонтальная полоса прокрутки
+        "QTableView QScrollBar::handle { background: #555555; }" // Ползунок прокрутки
+
+        // Стили для кнопок
         "QPushButton { background-color: #4B4B4B; color: white; border-radius: 5px; padding: 5px; }"
         "QPushButton:hover { background-color: #5C5C5C; }"
-    );    
+    );   
     resize(800, 600);
 }
 
