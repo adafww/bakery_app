@@ -34,6 +34,16 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     connect(deleteButton, &QPushButton::clicked, this, &MainWindow::deleteRecord);
     
     setWindowTitle("Учёт работы хлебозавода");
+    setStyleSheet(
+        "QMainWindow { background-color: #2B2B2B; }"   // Темно-серый фон окна
+        "QTabWidget::pane { background-color: #2B2B2B; }" // Темно-серый фон вкладок
+        "QTabBar::tab { background: #3B3B3B; color: white; padding: 5px; }"
+        "QTabBar::tab:selected { background: #4B4B4B; }"
+        "QTableView { background-color: white; color: black; gridline-color: gray; }"
+        "QHeaderView::section { background-color: #4B4B4B; color: white; padding: 5px; }"
+        "QPushButton { background-color: #4B4B4B; color: white; border-radius: 5px; padding: 5px; }"
+        "QPushButton:hover { background-color: #5C5C5C; }"
+    );    
     resize(800, 600);
 }
 
